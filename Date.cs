@@ -91,6 +91,11 @@
             return Day == other.Day && Month == other.Month && Year == other.Year;
         }
 
+        public override int GetHashCode()
+        {
+            return (Day, Month, Year).GetHashCode();
+        }
+
         public int CompareTo(Date? other)
         {
             if (other == null) return -1;
